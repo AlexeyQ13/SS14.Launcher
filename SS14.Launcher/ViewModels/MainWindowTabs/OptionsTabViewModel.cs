@@ -26,7 +26,7 @@ public class OptionsTabViewModel : MainWindowTabViewModel
     public bool HideDisableSigning => false;
 #endif
 
-    public override string Name => "Options";
+    public override string Name => "Параметры";
 
     public bool CompatMode
     {

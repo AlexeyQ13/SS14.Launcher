@@ -65,9 +65,9 @@ public class AccountDropDownViewModel : ViewModelBase
     }
 
     public string LoginText => _loginMgr.ActiveAccount?.Username ??
-                               (EnableMultiAccounts ? "No account selected" : "Not logged in");
+                               (EnableMultiAccounts ? "Аккаунт не выбран" : "Не авторизован");
 
-    public string LogoutText => _cfg.Logins.Count == 1 ? "Log out" : $"Log out of {_loginMgr.ActiveAccount?.Username}";
+    public string LogoutText => _cfg.Logins.Count == 1 ? "Выйти" : $"Выйти из {_loginMgr.ActiveAccount?.Username}";
 
     public bool AccountSwitchVisible => _cfg.Logins.Count > 1 || _loginMgr.ActiveAccount == null;
     public string AccountSwitchText => _loginMgr.ActiveAccount != null ? "Switch account:" : "Select account:";

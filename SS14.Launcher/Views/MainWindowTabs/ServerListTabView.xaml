@@ -13,16 +13,16 @@
   <DockPanel LastChildFill="True">
     <DockPanel DockPanel.Dock="Top" Margin="4, 0, 4, 2">
       <!--TODO: These measurements are just golfed based on approximations of where the sections *probably* are, and assumes a scroll bar is present. This might prove a bit wonky with localization and excessive screen sizes. It'd be ideal if this header section could dynamically adapt to the section sizes in the server list.-->
-      <Control DockPanel.Dock="Right" MinWidth="101" />
+      <Control DockPanel.Dock="Right" MinWidth="151" />
       <Rectangle DockPanel.Dock="Right" Classes="VerticalSeparator"/>
-      <TextBlock DockPanel.Dock="Right" Text="Players" Classes="SubText" TextAlignment="Center" MinWidth="80" Margin="10 0"/>
+      <TextBlock DockPanel.Dock="Right" Text="Игроки" Classes="SubText" TextAlignment="Center" MinWidth="80" Margin="10 0"/>
       <Rectangle DockPanel.Dock="Right" Classes="VerticalSeparator" />
-      <TextBlock DockPanel.Dock="Right" Text="Server Name" Classes="SubText"/>
+      <TextBlock DockPanel.Dock="Right" Text="Название сервера" Classes="SubText"/>
     </DockPanel>
 
     <DockPanel DockPanel.Dock="Bottom" Margin="4 4 4 0">
-      <Button DockPanel.Dock="Right" Content="Refresh" Command="{Binding RefreshPressed}" />
-      <TextBox DockPanel.Dock="Right" Text="{Binding SearchString, Mode=TwoWay}" Watermark="Search For Servers..."
+      <Button DockPanel.Dock="Right" Content="Обновить" Command="{Binding RefreshPressed}" />
+      <TextBox DockPanel.Dock="Right" Text="{Binding SearchString, Mode=TwoWay}" Watermark="Поиск сервера..."
                UseFloatingWatermark="False"
                Margin="0 0 8 0" />
     </DockPanel>

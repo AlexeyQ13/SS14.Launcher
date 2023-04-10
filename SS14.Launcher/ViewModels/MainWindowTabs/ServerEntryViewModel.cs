@@ -102,7 +102,7 @@ public sealed class ServerEntryViewModel : ObservableRecipient, IRecipient<Favor
             switch (_cacheData.Status)
             {
                 case ServerStatusCode.Offline:
-                    return "OFFLINE";
+                    return "ОФФЛАЙН";
                 case ServerStatusCode.Online:
                     // Give a ratio for servers with a defined player count, or just a current number for those without.
                     if (_cacheData.SoftMaxPlayerCount > 0)
@@ -114,7 +114,7 @@ public sealed class ServerEntryViewModel : ObservableRecipient, IRecipient<Favor
                         return $"{_cacheData.PlayerCount} / ∞";
                     }
                 case ServerStatusCode.FetchingStatus:
-                    return "Fetching...";
+                    return "Загрузка...";
                 default:
                     throw new NotSupportedException();
             }
@@ -128,17 +128,17 @@ public sealed class ServerEntryViewModel : ObservableRecipient, IRecipient<Favor
             switch (_cacheData.Status)
             {
                 case ServerStatusCode.Offline:
-                    return "Unable to contact server";
+                    return "Не удается связаться с сервером";
                 case ServerStatusCode.FetchingStatus:
-                    return "Fetching server status...";
+                    return "Получение сведений сервера...";
             }
 
             return _cacheData.StatusInfo switch
             {
-                ServerStatusInfoCode.NotFetched => "Fetching server description...",
-                ServerStatusInfoCode.Fetching => "Fetching server description...",
-                ServerStatusInfoCode.Error => "Error while fetching server description",
-                ServerStatusInfoCode.Fetched => _cacheData.Description ?? "No server description provided",
+                ServerStatusInfoCode.NotFetched => "Получение описания сервера...",
+                ServerStatusInfoCode.Fetching => "Получение описания сервера...",
+                ServerStatusInfoCode.Error => "Ошибка при получении описания сервера",
+                ServerStatusInfoCode.Fetched => _cacheData.Description ?? "Описание сервера не указано",
                 _ => throw new ArgumentOutOfRangeException()
             };
         }

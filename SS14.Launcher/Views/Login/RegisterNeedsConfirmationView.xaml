@@ -5,22 +5,22 @@
              xmlns:vml="clr-namespace:SS14.Launcher.ViewModels.Login;assembly=SS14.Launcher"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SS14.Launcher.Views.Login.RegisterNeedsConfirmationView"
-             Name="Register">
+             Name="Регистрация">
   <Design.DataContext>
     <vml:RegisterNeedsConfirmationViewModel />
   </Design.DataContext>
 
   <DockPanel LastChildFill="False">
     <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" Classes="NanoHeadingMedium"
-               Text="Register confirmation" />
+               Text="Подтверждение регистрации" />
 
     <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" TextWrapping="Wrap" MaxWidth="400"
-               Text="Please check your email to confirm your account. Once you have confirmed your account, press the button below to log in." />
+               Text="Пожалуйста, проверьте свою электронную почту, чтобы подтвердить учетную запись. После подтверждения учетной записи нажмите кнопку ниже, чтобы авторизоваться.." />
 
     <Button Content="{Binding ConfirmButtonText}" Command="{Binding ConfirmButtonPressed}"
             IsEnabled="{Binding ConfirmButtonEnabled}" DockPanel.Dock="Top" HorizontalAlignment="Center" />
 
-    <Button Content="Cancel" Command="{Binding ParentVM.SwitchToRegister}"
+    <Button Content="Отмена" Command="{Binding ParentVM.SwitchToRegister}"
             DockPanel.Dock="Bottom" HorizontalAlignment="Center" />
   </DockPanel>
 </UserControl>

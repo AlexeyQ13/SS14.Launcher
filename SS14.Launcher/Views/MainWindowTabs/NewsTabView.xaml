@@ -12,7 +12,7 @@
   </Design.DataContext>
 
   <DockPanel>
-    <TextBlock DockPanel.Dock="Top" Margin="4, 0" Text="Recent News:" Classes="NanoHeadingMedium" />
+    <TextBlock DockPanel.Dock="Top" Margin="4, 0" Text="Недавние новости:" Classes="NanoHeadingMedium" />
 
     <Panel Background="{DynamicResource StripeBackBrush}">
       <ScrollViewer IsVisible="{Binding NewsPulled}">
@@ -28,7 +28,7 @@
       </ScrollViewer>
 
       <TextBlock IsVisible="{Binding NewsNotPulled}">
-        Pulling news...
+        Получение новостей...
       </TextBlock>
     </Panel>
 

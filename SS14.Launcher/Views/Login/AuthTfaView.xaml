@@ -10,18 +10,18 @@
   </Design.DataContext>
 
   <DockPanel LastChildFill="False">
-    <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" Classes="NanoHeadingMedium" Text="2-factor authentication required" />
+    <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" Classes="NanoHeadingMedium" Text="Требуется двухфакторная аутентификация" />
 
     <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" TextWrapping="Wrap" MaxWidth="400"
-               Text="Please enter the authentication code from your app." />
+               Text="Пожалуйста, введите код аутентификации из вашего приложения." />
 
     <TextBox DockPanel.Dock="Top" Name="CodeBox" MaxWidth="300" Margin="0, 20, 0, 0"
-             Watermark="Authentication code"
+             Watermark="Код аутентификации"
              Text="{Binding Code, Mode=TwoWay}" IsEnabled="{Binding !Busy}" />
 
     <DockPanel DockPanel.Dock="Top" LastChildFill="False" MaxWidth="300" Margin="0 20 0 0">
       <Button DockPanel.Dock="Right" HorizontalAlignment="Center"
-              Content="Confirm" Command="{Binding ConfirmTfa}">
+              Content="Подтвердить" Command="{Binding ConfirmTfa}">
         <Button.IsEnabled>
           <MultiBinding Converter="{x:Static BoolConverters.And}">
             <Binding Path="IsInputValid" />
@@ -30,12 +30,12 @@
         </Button.IsEnabled>
       </Button>
 
-      <Button DockPanel.Dock="Left" HorizontalAlignment="Center" Content="Recovery code"
+      <Button DockPanel.Dock="Left" HorizontalAlignment="Center" Content="Код восстановления"
               Command="{Binding RecoveryCode}" IsEnabled="{Binding !Busy}" />
     </DockPanel>
 
     <DockPanel DockPanel.Dock="Top" LastChildFill="False" MaxWidth="300">
-      <Button DockPanel.Dock="Left" HorizontalAlignment="Center" Content="Cancel" Command="{Binding Cancel}"/>
+      <Button DockPanel.Dock="Left" HorizontalAlignment="Center" Content="Отмена" Command="{Binding Cancel}"/>
     </DockPanel>
 
   </DockPanel>

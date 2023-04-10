@@ -28,7 +28,7 @@ public class ServerListTabViewModel : MainWindowTabViewModel
     ).ToList();
     private string? _searchString;
 
-    public override string Name => "Servers";
+    public override string Name => "Сервера";
 
     public string? SearchString
     {
